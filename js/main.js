@@ -2,7 +2,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'Skiube', { preload: preload, 
 
 function preload() {
     game.load.image('bullet', 'assets/games/bullet.png');
-    game.load.image('enemyBullet', 'assets/games/enemy-bullet.png');
+    game.load.image('enemyBullet', 'assets/games/invader.png');
     game.load.spritesheet('invader', 'assets/games/invader32x32x4.png', 32, 32);
     game.load.image('ship', 'assets/games/player.png');
     game.load.spritesheet('kaboom', 'assets/games/explode.png', 128, 128);
