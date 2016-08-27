@@ -25,6 +25,7 @@ var enemyBullet;
 var firingTimer = 0;
 var stateText;
 var livingEnemies = [];
+var initSize = 1;
 
 function create() {
 
@@ -165,9 +166,15 @@ function update() {
             enemyFires();
         }
 
+        aliens.scale.setTo(initSize,initSize);
+
+        initSize+=.001;
+
         //  Run collision
         game.physics.arcade.overlap(bullets, aliens, collisionHandler, null, this);
         game.physics.arcade.overlap(enemyBullets, player, enemyHitsPlayer, null, this);
+
+
     }
 
 }
@@ -306,7 +313,7 @@ function restart () {
     //  And brings the aliens back from the dead :)
     aliens.removeAll();
     createAliens();
-
+    initSize = 1;
     //revives the player
     player.revive();
     //hides the text
