@@ -168,7 +168,10 @@ function update() {
 
         aliens.scale.setTo(initSize,initSize);
 
-        initSize+=.001;
+        var maxSize = 1.5;
+        if (initSize < maxSize) {
+            initSize += .001;
+        }
 
         //  Run collision
         game.physics.arcade.overlap(bullets, aliens, collisionHandler, null, this);
